@@ -1,0 +1,23 @@
+﻿@inject ICoachingRepository coachingRepository
+@model IEnumerable<Course>
+
+<table>
+    @foreach(var el in Model)
+            {
+
+        <tr>
+            <td>@el.CourseName</td>
+            <td>@el.Duration</td>
+            <td>@coachingRepository.TeacherName(el)</td>
+            
+
+
+        </tr>
+
+
+            }
+
+
+</table>
+
+

@@ -1,0 +1,39 @@
+﻿@model StudentViewModel
+
+
+
+<form enctype="multipart/form-data" asp-controller="Student" asp-action="CreateStudent" method="post">
+    <div>
+        <label asp-for="StudentName">StudentName</label>
+        <input asp-for="StudentName" />
+    </div>
+    <div>
+        <label asp-for="FatherName">Fathers Name</label>
+        <input asp-for="FatherName" />
+    </div>
+    <div>
+        <label asp-for="Age"></label>
+        <input asp-for="Age" />
+    </div>
+    <div>
+        <label asp-for="Gender">Gender</label>
+        <select asp-items="@Html.GetEnumSelectList<gender>()">
+        </select>
+    </div>
+    <div>
+        <label asp-for="Photo">Photo</label>
+        <input asp-for="Photo" />
+       </div>
+        <div>
+
+
+            @Html.DropDownList("CourseId", (IEnumerable<SelectListItem>)ViewBag.CoursesList, "select karo")
+
+        </div>
+
+    <button type="submit" class="btn btn-danger"> create</button>
+    
+
+
+
+</form>

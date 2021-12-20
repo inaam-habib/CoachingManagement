@@ -1,0 +1,27 @@
+﻿@model Course
+
+<form asp-controller="Course" asp-action="CreateCourse" method="Post">
+    <div>
+        <label asp-for="CourseName">
+            Course Name
+          </label>
+        <input asp-for="CourseName" />
+       </div>
+
+    <div>
+        <label asp-for="Duration"> Duration</label>
+        <input asp-for="Duration" />
+
+    </div>
+    <div>
+
+        @Html.DropDownList("TeacherId", (IEnumerable<SelectListItem>)ViewBag.Teacher, "select karo")
+
+
+    </div>
+    <div>
+        <button type="submit"> Create </button>
+    </div>
+
+
+</form>

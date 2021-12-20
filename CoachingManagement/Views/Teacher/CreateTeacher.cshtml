@@ -1,0 +1,37 @@
+﻿@model Teacher
+
+<form asp-controller="Teacher" asp-action="CreateTeacher" method="post">
+
+    <div>
+        <label asp-for="TeacherName">
+Teacher Name
+        </label>
+        <input asp-for="TeacherName">
+
+    </div>
+    <div>
+        <label asp-for="Qualification" >Qualification</label>
+        <input asp-for="Qualification" />
+
+    </div>
+    <div>
+        <label asp-for="Gender">
+            Gender
+        </label>
+        <select asp-items="@Html.GetEnumSelectList<gender>()">
+
+        </select>
+        
+    </div>
+    <div>
+        <label asp-for="Age"></label>
+        <input asp-for="Age"/>
+    </div>
+    <div>
+
+        <button type="submit">Create</button>
+    </div>
+
+
+
+</form>
